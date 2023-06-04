@@ -1,5 +1,7 @@
 "use client"; // Treat this file as a client-side file
 
+import axios from "axios";
+
 import { Button } from "@/app/components/Button";
 import { Input } from "@/app/components/inputs/Input";
 import { useCallback, useState } from "react";
@@ -37,7 +39,7 @@ export function AuthForm() {
     setIsLoading(true);
 
     if (variant === "REGISTER") {
-      // Axios Register
+      axios.post("/api/register", data);
     }
 
     if (variant === "LOGIN") {
